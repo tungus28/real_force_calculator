@@ -12,7 +12,9 @@ including an expandable system of bonuses/deductions.
 
 ## Situation
 ● Alice is 26 years old, she has 2 kids and her salary is $6000
+
 ● Bob is 52, he is using a company car and his salary is $4000
+
 ● Charlie is 36, he has 3 kids, company car and his salary is $5000
 
 
