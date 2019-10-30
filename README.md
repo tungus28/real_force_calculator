@@ -5,8 +5,11 @@ An application designed to calculate the salary of employees
 including an expandable system of bonuses/deductions.
 
 ● Country Tax for salaries is 20%
+
 ● If an employee older than 50 we want to add 7% to his salary
+
 ● If an employee has more than 2 kids we want to decrease his Tax by 2%
+
 ● If an employee wants to use a company car we need to deduct $500
 
 
@@ -48,6 +51,6 @@ including an expandable system of bonuses/deductions.
 3. Open the application in your browser.
 
 ## How to test
-Choose the project root, then run: ./bin/phpunit --configuration phpunit.xml.dist
+Choose the project root, then run: `./bin/phpunit --configuration phpunit.xml.dist`
 
 
