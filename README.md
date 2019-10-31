@@ -26,8 +26,8 @@ including an expandable system of bonuses/deductions.
     - Name: string, not null
     - Salary: integer, not null
     - Birthday: integer, unix timestamp, not null
-    - Kids: integer, default = 0
-    - UsesCar: integer (0 = false, 1 = true), default = 0
+    - Kids: integer, defaults to 0
+    - UsesCar: integer (0 = false, 1 = true), defaults to 0
 - Statement class
     - modifiers: list of bonus/deduction values
     - subTotal: Sub Total value
