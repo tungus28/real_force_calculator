@@ -5,14 +5,19 @@ An application designed to calculate the salary of employees
 including an expandable system of bonuses/deductions.
 
 ● Country Tax for salaries is 20%
+
 ● If an employee older than 50 we want to add 7% to his salary
+
 ● If an employee has more than 2 kids we want to decrease his Tax by 2%
+
 ● If an employee wants to use a company car we need to deduct $500
 
 
 ## Situation
 ● Alice is 26 years old, she has 2 kids and her salary is $6000
+
 ● Bob is 52, he is using a company car and his salary is $4000
+
 ● Charlie is 36, he has 3 kids, company car and his salary is $5000
 
 
@@ -21,8 +26,8 @@ including an expandable system of bonuses/deductions.
     - Name: string, not null
     - Salary: integer, not null
     - Birthday: integer, unix timestamp, not null
-    - Kids: integer, default = 0
-    - UsesCar: integer (0 = false, 1 = true), default = 0
+    - Kids: integer, defaults to 0
+    - UsesCar: integer (0 = false, 1 = true), defaults to 0
 - Statement class
     - modifiers: list of bonus/deduction values
     - subTotal: Sub Total value
@@ -46,6 +51,6 @@ including an expandable system of bonuses/deductions.
 3. Open the application in your browser.
 
 ## How to test
-Choose the project root, then run: ./bin/phpunit --configuration phpunit.xml.dist
+Choose the project root, then run: `./bin/phpunit --configuration phpunit.xml.dist`
 
 
