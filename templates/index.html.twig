@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>RealForce Salary Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    
+</head>
+<body>
+  <div class="ui two column centered grid" style="margin: 20px 20px;">
+    <div class="column">
+      <div class="ui segment">
+        <div class="ui secondary segment green">
+          <h2>RealForce Salary Calculator</h2>       
+        </div>
+      </div>
+  <div class="ui segment">
+    {% for item in data %}
+      <div class="ui secondary segment">
+        <a class="ui red ribbon label"><h3><b>{{ item.employee.getName() }}</b></h3></a>                        
+   
+                   <div class="ui segment">                      
+                      <div class="ui two column centered grid">
+                        <div class="column"><b>Base salary</b></div>
+                        <div class="column">${{item.employee.getSalary()}}</div>
+                      </div>
+                   </div>
+                           
+                            {% if item.statement.modifiers %}
+                           
+                                <div class="ui segment">
+                                    <p><b>Bonuses and deductions</b>
+                                
+                               
+                                {% for desc, val in item.statement.modifiers %}
+                                  <div class="ui segment">
+                                    <div class="ui two column centered grid">
+                                        <div class="column">{{desc}}</div>
+                                        <div class="column">{{val}}</div>
+                                    </div>                                                                     
+                                  </div>
+                                 
+                                {% endfor %}
+                                </div>
+                                <div class="ui segment">
+                                    <div class="ui two column centered grid">
+                                        <div class="column"><b>Subtotal</b></div>
+                                        <div class="column"><b>${{ item.statement.subTotal }}</b></div>
+                                     </div>
+                                  
+                                </div>
+                               
+                            {% endif %}
+                           
+                            <div class="ui segment">
+                                <div class="ui two column centered grid">
+                                  <div class="column">Country tax</div>
+                                  <div class="column">{{ country_tax }}%</div>
+                                </div>                                  
+                            </div>
+                           
+
+                            
+                            {% if item.statement.taxDiscounts %}
+                              <div class="ui segment">  
+                                <b>Tax Discounts</b>
+                             
+                                {% for desc, val in item.statement.taxDiscounts %}
+                                <div class="ui segment">
+                                  <div class="ui two column centered grid">
+                                    <div class="column">{{desc}}</div>
+                                    <div class="column">{{val}}%</div>
+                                  </div>                                
+                                </div>
+                                {% endfor %}
+                              </div>
+                            {% endif %}
+                            
+                           <div class="ui segment">
+                             <div class="ui two column centered grid">
+                               <div class="column">Tax value</div>
+                               <div class="column">${{ item.statement.taxValue }}</div>                          
+                             </div>
+                           </div>
+                           
+                           <div class="ui segment">
+                             <div class="ui two column centered grid">
+                               <div class="column"><b>Total</b></div>
+                               <div class="column">                                 
+                                 <a class="ui green label"><b>${{ item.statement.total }}</b></a>
+                               </div>
+                             </div>                                  
+                           </div>
+                 
+            </div> 
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
